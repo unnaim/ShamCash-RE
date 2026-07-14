@@ -1,0 +1,5 @@
+/api/v1/inboxes/
+/api/v1/inboxes/{INBOX_IDENTIFIER}/contacts/{CONTACT_IDENTIFIER}
+/api/v1/inboxes/{INBOX_IDENTIFIER}/contacts/{CONTACT_IDENTIFIER}/conversations
+/api/v1/inboxes/{INBOX_IDENTIFIER}/contacts/{CONTACT_IDENTIFIER}/conversations/{CONVERSATION_IDENTIFIER}/messages
+/api/v1/inboxes/LLh16AnfFXhFsReA6JiHBevQ/contacts

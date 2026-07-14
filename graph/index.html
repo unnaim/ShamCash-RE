@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ShamCash 2.2.6 — API Model (RE)</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header>
+    <div>
+      <h1>ShamCash — API Model</h1>
+      <div class="sub">v2.2.6 · reverse-engineered · multi-engine graph explorer</div>
+    </div>
+    <div class="spacer"></div>
+    <div class="stat"><b id="stat-ep">0</b> endpoints</div>
+    <div class="stat"><b id="stat-svc">0</b> services</div>
+    <div class="stat"><b>11</b> data models</div>
+  </header>
+
+  <aside>
+    <h2>Search</h2>
+    <input id="search" class="search" placeholder="Filter endpoints, services, models…" autocomplete="off">
+    <div class="hint">Hover or click any node to trace its hierarchy and data-model links.</div>
+
+    <h2>Domains</h2>
+    <div id="legend"></div>
+    <div class="hint">Click a domain to drop it from the map.</div>
+
+    <h2>Display</h2>
+    <label class="toggle" id="ctl-models"><input type="checkbox" id="toggleModels" checked> Show data-model links</label>
+    <div class="slider-row" id="ctl-beta">
+      <span>Bundle</span><input type="range" id="beta" min="0" max="1" step="0.02" value="0.82">
+      <span class="muted" id="betaVal">0.82</span>
+    </div>
+    <div class="slider-row" id="ctl-rotate">
+      <span>Rotate</span><input type="range" id="rotate" min="0" max="360" step="1" value="0">
+      <span class="muted" id="rotateVal">0°</span>
+    </div>
+    <div class="hint" id="ctl-hint">Bundle: straight ↔ tight · Rotate: spin the map (or Shift-drag).</div>
+
+    <h2>Actions</h2>
+    <button id="resetBtn" class="btn" style="width:100%">↺ Reset view</button>
+
+    <div class="disclaimer">
+      Five engines over one hierarchy: <b>domain → service → endpoint</b> (+ a data-model spoke).
+      Amber = data-model links (drawn in node-link engines; co-highlighted in enclosure engines).
+      Built from static RE of <code>libapp.so</code>; methods, hosts &amp; auth are <b>inferred</b>,
+      not server-confirmed.
+    </div>
+  </aside>
+
+  <main>
+    <div id="engineBar">
+      <button class="btn active" data-engine="radial">✦ Radial</button>
+      <button class="btn" data-engine="tree">⌇ Dendrogram</button>
+      <button class="btn" data-engine="force">✷ Force</button>
+      <button class="btn" data-engine="treemap">▦ Treemap</button>
+      <button class="btn" data-engine="pack">◉ Circle-pack</button>
+    </div>
+    <div id="cy"></div>
+    <div id="detail">
+      <span class="close" id="detailClose">×</span>
+      <div id="detailContent"></div>
+    </div>
+  </main>
+</div>
+
+<script src="vendor/d3.min.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

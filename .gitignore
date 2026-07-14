@@ -1,0 +1,28 @@
+# ─── Copyrighted application binary — do not redistribute ───
+*.apk
+
+# ─── Bulk decompilation / raw extracts of the copyrighted app ───
+# (smali, decompiled Java, reconstructed asm, full object pool, extracted string tables,
+#  and auto-generated instrumentation — derived from the binary, not for redistribution)
+apktool_out/
+jadx_out/
+analysis/blutter_out/
+analysis/api/all_strings.txt
+
+# ─── Reverse-engineered client / recreated-logic scripts — withheld from publication ───
+analysis/client/
+
+# ─── Third-party tooling & virtual environments ───
+tools/
+**/.venv/
+**/*-venv/
+venv/
+
+# ─── Python / OS / editor cruft ───
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
